@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+			 font-size: 14px;
+			 margin: 50px 30px;
+			}
+			table {
+			  border: 2px solid #42b983;
+			  border-radius: 5px;
+			  background-color: #fff;
+			}
+
+			th {
+			  background-color: #42b983;
+			  color: rgba(255,255,255,0.66);
+			  cursor: pointer;
+			}
+
+			td {
+			  background-color: #f9f9f9;
+			}
+		
+			th, td {
+			  min-width: 90px;
+			  padding: 10px 10px;
+			}
+			
+			.arrow {
+			  display: inline-block;
+			  vertical-align: middle;
+			  width: 0;
+			  height: 0;
+			  margin-left: 5px;
+			  opacity: 0.66;
+			}
+			
+			.arrow.asc {
+			  border-left: 4px solid transparent;
+			  border-right: 4px solid transparent;
+			  border-bottom: 4px solid #fff;
+			}
+
+			.arrow.dsc {
+			  border-left: 4px solid transparent;
+			  border-right: 4px solid transparent;
+			  border-top: 4px solid #fff;
+			}
+			.button {
+			    background-color: #42b983;
+			    border: none;
+			    border-radius: 5px;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 2px 50px;
+			    cursor: pointer;
+			}
+			.button2 {
+				background-color: #008CBA;
+			    border: none;
+			    border-radius: 5px;
+			    color: white;
+			    padding: 10px 20px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 2px 4px;
+			    cursor: pointer;
+			} 
+			#bankName{
+			    font-size: 10px;
+			    padding: 10px;
+			    line-height: normal;
+			}
+			
+			ul.pagination {
+			    display: inline-block;
+			    padding: 0;
+			    margin: 0;
+			}
+
+			ul.pagination li {
+				display: inline;
+			}
+
+			ul.pagination li a {
+			    color: black;
+			    float: left;
+			    padding: 8px 16px;
+			    text-decoration: none;
+			    transition: background-color .3s;
+			    border-radius: 5px;
+			}
+
+			ul.pagination li a.active {
+			    background-color: #42b983;
+			    color: white;
+			    border-radius: 5px;
+			}
+
+			ul.pagination li a:hover:not(.active) {
+				background-color: #ddd;
+			}
+				
+		</style>
+		
+		<script type="text/javascript">
+			function sortDscId(){
+				var tabNode = document.getElementById("tabId");
+				var rows0 = tabNode.rows;
+				var rows1 = [];
+				
+				for (var x = 1; x < rows0.length; x++) {
+					rows1[x - 1] = rows0[x];
+				}
+				for (var x = 0; x < rows1.length - 1; x++) {
+					for (var y = x + 1; y < rows1.length; y++) {
+						
+						if (parseInt(rows1[x].cells[1].innerHTML) > parseInt(rows1[y].cells[1].innerHTML)) {
+							var temp = rows1[x];
+							rows1[x] = rows1[y];
+							rows1[y] = temp;
+						}
+					}
+				}
+				
+				var ageimg=document.getElementById("bankdscId");
+					for (var x = rows1.length-1; x >=0; x--) {
+						rows1[x].parentNode.appendChild(rows1[x]);
+					}
+			}
+			function sortAscId(){
+				var tabNode = document.getElementById("tabId");
+				var rows0 = tabNode.rows;
+				var rows1 = [];
+				
+				for (var x = 1; x < rows0.length; x++) {
+					rows1[x - 1] = rows0[x];
+				}
+				for (var x = 0; x < rows1.length - 1; x++) {
+					for (var y = x + 1; y < rows1.length; y++) {
+						
+						if (parseInt(rows1[x].cells[1].innerHTML) > parseInt(rows1[y].cells[1].innerHTML)) {
+							var temp = rows1[x];
+							rows1[x] = rows1[y];
+							rows1[y] = temp;
+						}
+					}
+				}
+				
+				var ageimg=document.getElementById("bankascId");
+					for (var x = 0; x < rows1.length; x++) {
+						rows1[x].parentNode.appendChild(rows1[x]);
+					}
+			}
+		</script>
+		
+	</head>
+	<body>
+
+		<h1 align="center">投 资 信 息 收 集 </h1>
+	
+		<div align="center">
+			<button class="button">贷款</button>
+			<button class="button">存款</button>
+			<button class="button">理财</button>
+		</div>
+		</br>
+		<form align="center">
+			<input type="text" id="bankName">
+			<button class="button2">Search</button>
+			<br />
+		</form>
+		</br>
+		<table align="center" id="tabId">
+			<thead>
+				  <tr>
+				  	<th>序号<span class="arrow asc" onclick="sortAscId()" id="bankascId"></span><span  class="arrow dsc" onclick="sortDscId()" id="bankdscId"></span></th>
+				    <th>银行名称<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>活期<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>3个月<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>半年<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>一年<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>二年<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>三年<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				    <th>五年<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+				  </tr>
+		  	</thead>
+		  	<tbody>
+				  <tr>
+				  	<td>1</td>
+				    <td>xxxA银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				  	<td>2</td>
+				    <td>xxxB银行</td>
+				    <td>0.32%</td>
+				    <td>1.34%</td>
+				    <td>1.54%</td>
+				    <td>1.74%</td>
+				    <td>2.24%</td>
+				    <td>2.74%</td>
+				    <td>2.74%</td>
+				  </tr>
+				  <tr>
+				    <td>3</td>
+				    <td>xxxC银行</td>
+				    <td>0.30%</td>
+				    <td>1.33%</td>
+				    <td>1.53%</td>
+				    <td>1.72%</td>
+				    <td>2.21%</td>
+				    <td>2.73%</td>
+				    <td>2.74%</td>
+				  </tr>
+				  <tr>
+				    <td>4</td>
+				    <td>xxxD银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>5</td>
+				    <td>xxxE银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>6</td>
+				    <td>xxxF银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>7</td>
+				    <td>xxxG银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>8</td>
+				    <td>xxxH银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>9</td>
+				    <td>xxxI银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>10</td>
+				    <td>xxxJ银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>11</td>
+				    <td>xxxK银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+				  <tr>
+				    <td>12</td>
+				    <td>xxxL银行</td>
+				    <td>0.30%</td>
+				    <td>1.35%</td>
+				    <td>1.55%</td>
+				    <td>1.75%</td>
+				    <td>2.25%</td>
+				    <td>2.75%</td>
+				    <td>2.75%</td>
+				  </tr>
+		  	</tbody>
+		</table>
+		</br>
+		<div align="center">
+			<ul class="pagination">
+			  <li><a href="#">«</a></li>
+			  <li><a href="#">1</a></li>
+			  <li><a class="active" href="#">2</a></li>
+			  <li><a href="#">3</a></li>
+			  <li><a href="#">4</a></li>
+			  <li><a href="#">5</a></li>
+			  <li><a href="#">6</a></li>
+			  <li><a href="#">7</a></li>
+			  <li><a href="#">»</a></li>
+			</ul>
+		</div>
+
+	</body>
+	
+</html>
