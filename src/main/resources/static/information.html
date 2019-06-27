@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="stylesheet" href="css/layui.css">
+  <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">    
+
+  <div class="layui-body" style="top: 0;bottom: 0;left: 20px;">
+	<br/>
+	<div class="demoTable">
+		搜索ID：
+		<div class="layui-inline">
+		<input class="layui-input" name="id" id="demoReload" autocomplete="off">
+		</div>
+		<button class="layui-btn" data-type="reload">搜索</button>
+	</div>
+  	<table class="layui-hide" id="bankinfo"></table>
+  </div>
+
+  
+</div>
+
+              
+          
+<script src="./js/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 --> 
+ 
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#bankinfo'
+    ,url:'./information.json'
+    ,cols: [[
+      {field:'id', minWidth:80, title: 'ID', sort: true}
+      ,{field:'bankname', minWidth:180, title: '银行全称',sort: true}
+      ,{field:'bankurl', minWidth:180, title: '官方网址'}
+      ,{field:'address', minWidth:180, title: '总部地址'}
+      ,{field:'banktype', minWidth: 80, title: '银行类型'}
+      ,{field:'capital', minWidth:180, title: '注册资本', sort: true}
+      ,{field:'socialcode', minWidth:80, title: '统一社会信用代码', sort: true}
+      ,{field:'creditcode', minWidth:80, title: '注册号', sort: true}
+      ,{field:'registauth', minWidth:80, title: '登记机关', sort: true}
+      ,{field:'finishday', minWidth:100, title: '成立日期', sort: true}
+    ]]
+	,id: 'testReload'
+    ,page: true
+  });
+  
+  //search 
+  var $ = layui.$, active = {
+    reload: function(){
+      var demoReload = $('#demoReload');
+      
+      //执行重载
+      table.reload('testReload', {
+        page: {
+          curr: 1 //重新从第 1 页开始
+        }
+        ,where: {
+          key: {
+            id: demoReload.val()
+          }
+        }
+      }, 'data');
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+</body>
+</html>
