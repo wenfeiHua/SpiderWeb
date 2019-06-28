@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>银行投资</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link type='text/css' rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" id="bootstrap-css">
+        <link type='text/css' rel='stylesheet' href="css/sow.css">
+
+        <!-- JS -->
+        <script type='text/javascript' charset='utf-8' src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type='text/javascript' charset='utf-8' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script type='text/javascript' charset='utf-8' src="js/ApiUrl.js"></script>
+    </head>
+    <script type="text/javascript"> 
+        // iframe height
+        function changeFrameHeight(){
+            var ifm= document.getElementById("bodyFrame");
+            ifm.height=document.documentElement.clientHeight-62;
+        }
+
+        window.onresize=function() {
+            changeFrameHeight();
+        }
+
+        $(function(){
+            // iframe refresh
+            $("body").bind("keydown",function(event){
+                if (event.keyCode == 116) {
+                    event.preventDefault();
+                    $("#bodyFrame").attr("src",window.frames["bodyFrame"].src);
+                }
+            });
+
+            changeFrameHeight();
+            $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");
+            });
+
+            $(".dropdown-menu li a").click(function() {
+                $('.dropdown-menu').css("display", "none");
+            })
+
+            // nav menu
+            $('#nav_user').click(function () {
+                $("#bodyFrame").attr("src", "BankInfo.html");
+                $("#nav_user").addClass("active");
+                $('#nav_deviceDropdown').removeClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+
+            $('#nav_machine').click(function () {
+                $("#bodyFrame").attr("src", "Machine.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").addClass("active");
+                $('#nav_machine').addClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+
+            $('#nav_device').click(function () {
+                $("#bodyFrame").attr("src", "Device.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").addClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').addClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+
+            $('#nav_watch').click(function () {
+                $("#bodyFrame").attr("src", "Watch.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").addClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').addClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+            
+            $('#nav_map').click(function () {
+                $("#bodyFrame").attr("src", "Map.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").addClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').addClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            
+            });
+
+            $('#nav_fault').click(function () {
+                $("#bodyFrame").attr("src", "Fault.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").removeClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').addClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+            
+            $('#nav_track').click(function () {
+                $("#bodyFrame").attr("src", "Track.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").removeClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').addClass("active");
+                $('#nav_mapStatus').removeClass("active");
+            });
+
+            $('#nav_mapStatus').click(function () {
+                $("#bodyFrame").attr("src", "MapStatus.html");
+                $('#nav_user').removeClass("active");
+                $("#nav_deviceDropdown").removeClass("active");
+                $('#nav_machine').removeClass("active");
+                $('#nav_device').removeClass("active");
+                $('#nav_watch').removeClass("active");
+                $('#nav_map').removeClass("active");
+                $('#nav_fault').removeClass("active");
+                $('#nav_track').removeClass("active");
+                $('#nav_mapStatus').addClass("active");
+            });
+        })
+    </script>
+    <body>
+        <div >
+            
+        </div>
+        <div class="navbar-wrapper">
+            <div class="container-fluid">
+                <nav class="navbar navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="Home.html">首页</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li id="nav_user"><a href="#" >银行信息</a></li>
+                                <li id="nav_deviceDropdown"><a href="#">存款信息</a></li>
+                                <li id="nav_fault"><a href="#">贷款信息</a></li>
+                                <li class="dropdown" id="nav_track">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">理财栏目<b class="caret"></b></a>
+                                     <ul class="dropdown-menu">
+                                        <li id="nav_machine"><a href="#">機器</a></li>
+                                        <li id="nav_device"><a href="#">スマホ</a></li>
+                                        <li id="nav_watch"><a href="#">時計</a></li>
+                                        <li id="nav_map"><a href="#">工場マップ</a></li>
+                                    </ul>
+                                </li>
+                                <li id="nav_mapStatus"><a href="#">其它</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav pull-right"></ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="sow-body">
+            <iframe id="bodyFrame" width="100%" height="100%" src="BankInfo.html" frameborder="0" scrolling="yes"></iframe>
+        </div>
+        <div class="footer" align="center">联迪投资信息科技</div>
+    </body>
+</html>

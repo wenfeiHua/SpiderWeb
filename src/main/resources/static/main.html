@@ -1,89 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>layout 后台大布局</title>
+<title>投资信息管理平台</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<script type='text/javascript' charset='utf-8' src="js/main.js"></script>
+	<script src="./js/layui.js"></script>
+
 <link rel="stylesheet" href="css/layui.css">
 </head>
 
 <body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin">
-  <div class="layui-header">
-    <div class="layui-logo">后台布局</div>
-    <!-- 头部区域（可配合layui已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left">
-      <li class="layui-nav-item"><a href="">金融信息</a></li>
-      <li class="layui-nav-item"><a href="">社区</a></li>
-      <li class="layui-nav-item"><a href="">关于本站</a></li>
-	  <li class="layui-nav-item"><a href="">附近银行</a></li>
-      <li class="layui-nav-item">
-        <a href="javascript:;">其它系统</a>
-        <dl class="layui-nav-child">
-          <dd><a href="">邮件管理</a></dd>
-          <dd><a href="">消息管理</a></dd>
-          <dd><a href="">授权管理</a></dd>
-        </dl>
-      </li>
-    </ul>
-    <ul class="layui-nav layui-layout-right">
-      <li class="layui-nav-item">
-        <a href="javascript:;">
-          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-          贤心
-        </a>
-        <dl class="layui-nav-child">
-          <dd><a href="">基本资料</a></dd>
-          <dd><a href="">安全设置</a></dd>
-        </dl>
-      </li>
-      <li class="layui-nav-item"><a href="">退了</a></li>
-    </ul>
-  </div>
-  
-  <div class="layui-side layui-bg-black">
-    <div class="layui-side-scroll">
-      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->      
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-	    <li class="layui-nav-item"><a href="information.html" target="menuFrame">银行基本信息</a></li>
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">存款利率信息</a>
-          <dl class="layui-nav-child">
-            <dd><a href="profit.html" target="menuFrame">定期利率</a></dd>
-            <dd><a href="export.html" target="menuFrame">活期利率</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item">
-          <a href="javascript:;">理财产品信息</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;">外汇</a></dd>
-            <dd><a href="javascript:;">黄金</a></dd>
-            <dd><a href="javascript:;">债券</a></dd>
-			<dd><a href="javascript:;">证券</a></dd>
-          </dl>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-  
-  <div class="layui-body" style="overflow: hidden;">
-	  <iframe id="menuFrame" name="menuFrame" src="information.html" style="overflow:visible;" scrolling="yes" frameborder="no" width="100%" height="100%; float:left">
-	  </iframe>
-  </div>
-  
-  <div class="layui-footer">
-    <!-- 底部固定区域 -->
-    © layui.com - 底部固定区域
-  </div>
-</div>
-<script src="./js/layui.js"></script>
-<script>
-//JavaScript代码区域
-layui.use('element', function(){
-  var element = layui.element;
-  
-});
-</script>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header">
+			<div class="layui-logo">联迪投资</div>
+			<!-- 头部区域（可配合layui已有的水平导航） -->
+			<ul class="layui-nav layui-layout-left">
+				<li class="layui-nav-item"><a href="">金融信息</a></li>
+				<li class="layui-nav-item"><a href="">社区</a></li>
+				<li class="layui-nav-item"><a href="">关于本站</a></li>
+				<li class="layui-nav-item"><a href="">附近银行</a></li>
+			</ul>
+			<ul class="layui-nav layui-layout-right">
+				<li class="layui-nav-item"><a href="javascript:;"> <img
+						src="http://t.cn/RCzsdCq" class="layui-nav-img"> 贤心
+				</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="">基本资料</a>
+						</dd>
+						<dd>
+							<a href="">安全设置</a>
+						</dd>
+					</dl></li>
+				<li class="layui-nav-item"><a href="">退了</a></li>
+			</ul>
+		</div>
+
+		<div class="layui-side layui-bg-black">
+			<div class="layui-side-scroll">
+				<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+				<ul class="layui-nav layui-nav-tree" lay-filter="test">
+<!-- 					<li class="layui-nav-item"><a href="information.html" target="menuFrame">银行基本信息</a></li> -->
+ 					<li id="bankBtn" class="layui-nav-item"><a href="BankInformation.html" target="menuFrame">银行基本信息</a></li>
+					<li class="layui-nav-item layui-nav-itemed"><a class="" href="javascript:;">存款利率信息</a></li>
+					<li class="layui-nav-item layui-nav-itemed"><a class="" href="javascript:;">贷款利率信息</a></li>
+					<li class="layui-nav-item"><a href="javascript:;">理财产品信息</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">外汇</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">黄金</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">债券</a>
+							</dd>
+							<dd>
+								<a href="javascript:;">证券</a>
+							</dd>
+						</dl></li>
+				</ul>
+			</div>
+		</div>
+
+<!-- 		<div class="layui-body" style="overflow: hidden;">
+			<iframe id="menuFrame" name="menuFrame" src="information.html"
+				style="overflow: visible;" scrolling="yes" frameborder="no"
+				width="100%" height="100%; float:left"> </iframe>
+		</div> -->
+		<div id="bankInfo" class="layui-body" style="overflow: hidden;">
+			<iframe id="menuFrame" name="menuFrame" src="BankInformation.html"
+				style="overflow: visible;" scrolling="yes" frameborder="no"
+				width="100%" height="100%; float:left"> </iframe>
+		</div>
+
+		<div class="layui-footer" align="center">
+			<!-- 底部固定区域 -->
+			© layui.com - 底部固定区域
+		</div>
+	</div>
+
+	<script>
+		//JavaScript代码区域
+		layui.use('element', function() {
+			var element = layui.element;
+		});
+	</script>
 </body>
 </html>

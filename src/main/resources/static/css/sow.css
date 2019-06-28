@@ -1,0 +1,272 @@
+@charset "UTF-8";
+body{
+/*    background: #8999A8 ;*/
+}
+.navbar, .dropdown-menu{
+    background: #a7b3bf;
+    border: none;
+/*background:rgba(255,255,255,0.25);*/
+}
+
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+    border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
+    color: #fff;
+}
+.dropdown-menu{
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+    border-bottom: #C4E17F 3px solid;
+}
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+    border-bottom: #F7FDCA 3px solid;
+}
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+    border-bottom: #FECF71 3px solid;
+}
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+    border-bottom: #F0776C 3px solid;
+}
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+    border-bottom: #DB9DBE 3px solid;
+}
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+    border-bottom: #C49CDE 3px solid;
+}
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+    border-bottom: #669AE1 3px solid;
+}
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+    border-bottom: #62C2E4 3px solid;
+}
+
+.navbar-toggle .icon-bar{
+    color: #fff;
+    background: #fff;
+}
+
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+/* Main body section */
+.sow-body {
+    margin-top: 56px;
+    width: 100%;
+    height: 100%;
+/*  margin-right: 5px;*/
+}
+
+/* table begin*/
+.table thead{
+	background: #8999A8;
+	color: #fff;
+}
+
+.table tr th{
+	text-align: center;
+    vertical-align: middle;
+}
+/*table end*/
+
+.input_error {
+    border-color: red;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+/* .funkyradio */
+.funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 0px solid #D1D3D4;
+  font-weight: normal;
+  margin-left:1px;
+  margin-right:1px;
+}
+
+.funkyradio label>img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label {
+  position: relative;
+  line-height: 1.5em;
+  text-indent: 2em;
+  margin-top: 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 3.5em;
+  margin-top: 7px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 5px;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 1.5em;
+  height: 1.5em;
+  background: #D1D3D4;
+  border-radius: 20px;
+}
+
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  content: '';
+  width: 55px;
+  height: 55px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .4em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: 0;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #62696f;
+  opacity:0.6;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked ~ label:before,
+.funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked ~ label:before,
+.funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked ~ label:before,
+.funkyradio-info input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+/* end .funkyradio */
+
+
+/* small screen */
+@media (max-width: 768px) {
+.sow-body {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 70px;
+    height: 100%;
+    position: relative;
+    -moz-animation: bodyslideout 300ms forwards;
+    -o-animation: bodyslideout 300ms forwards;
+    -webkit-animation: bodyslideout 300ms forwards;
+    animation: bodyslideout 300ms forwards;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+}
+.footer {
+    position: fixed right:0px;
+    margin-bottom: 0px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    background-color: #eee
+  }

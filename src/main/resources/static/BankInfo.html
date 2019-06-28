@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>银行信息</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link type='text/css' rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" id="bootstrap-css">
+        <link type='text/css' rel='stylesheet' href="css/sow.css">
+        <link type='text/css' rel='stylesheet' href="css/banktable.css">
+
+        <!-- JS -->
+        <script type='text/javascript' charset='utf-8' src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type='text/javascript' charset='utf-8' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> 
+        <script type='text/javascript' charset='utf-8' src="js/ApiUrl.js"></script>
+        <script type='text/javascript' charset='utf-8' src="js/BankInfo.js"></script>
+</head>
+<body>
+<div margin-left="100px" margin-right="100px" height="100%">
+    <div align="center">
+        <img alt="" src="image/logo_top.png">
+        <input type="text" id="bankName">
+        <button id="searchBtn" class="button2">搜索</button>
+        </br>
+    </div>
+    <div id="tableView" margin-top="20px">
+        <table align="center" id="bankTable" border="1">
+            <thead>
+                    <th class="tableStyle">银行名称<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>官方网址<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>总部地址<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>银行类型<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>注册资本<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>统一社会信用代码<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>注册号<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>登记机关<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                    <th>成立日期<span class="arrow asc"></span><span class="arrow dsc"></span></th>
+                </tr>
+            </thead>
+            <tbody id="bankInfo">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
